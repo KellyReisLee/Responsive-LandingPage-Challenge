@@ -1,0 +1,951 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  /* This reset all text HTML elements */
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+}
+
+/* Containers configuration */
+
+.container {
+  /* It's responsible for separate the walls from the containers elements from the body structure. */
+
+  /* This is perfect for responsive projects */
+  max-width: 1300px;
+
+  /* It's give some space between the containers and the content */
+  padding: 3rem;
+
+  /* width: min(var(max-width, 100%)); */
+  /* This is for margin left and right */
+
+  /* Determines that both sides have the same margin  */
+  margin-inline: auto;
+  padding: 2rem;
+  padding-top: 1rem;
+}
+
+.nav-wrapper {
+  display: flex;
+  flex: 1fr 250px 1fr;
+  justify-content: space-between;
+  align-content: center;
+  padding: 0;
+}
+
+.hide {
+  display: none;
+}
+/* Toggle button */
+
+/* This will activated when the toggle box shows up */
+.primary-header[data-overlay]::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.8));
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+  color: var(--clr-accent-400);
+}
+
+.primary-navigation[data-visible] {
+  display: block;
+  z-index: 100;
+}
+
+/* Dropdown menu */
+.box-1 {
+  background-color: white;
+  display: flex;
+  flex-direction: rows;
+  line-height: 1.54;
+  gap: 0.8rem;
+  left: -80px;
+  /* columns: 2; */
+  justify-self: center;
+  z-index: 1000;
+  text-decoration: none;
+  width: 125px;
+  position: absolute;
+  margin-top: 0.3rem;
+  padding: 0.7rem 0.5rem;
+  border-radius: 7px;
+  box-shadow: 5px 4px 10px 1px rgb(0, 0, 0, 0.2);
+  text-align: left;
+  cursor: pointer;
+}
+
+.box-2 {
+  z-index: 1000;
+  background-color: white;
+  left: 85px;
+  line-height: 1.54;
+  display: flex;
+  z-index: 1000;
+  text-align: left;
+  text-decoration: none;
+  width: 75px;
+  position: absolute;
+  margin-top: 0.3rem;
+  padding: 1rem 2rem;
+  border-radius: 7px;
+  box-shadow: 5px 4px 10px 1px rgb(0, 0, 0, 0.2);
+}
+
+li {
+  cursor: pointer;
+}
+
+/* .box {
+  z-index: 1000;
+  text-align: center;
+  text-decoration: none;
+  position: absolute;
+  margin-top: 0.3rem;
+  padding: 0.7rem 0.5rem;
+  border-radius: 7px;
+} */
+
+.header {
+  margin-bottom: 4rem;
+}
+
+.mobile-nav-toggle {
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0.5em;
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+.nav-list {
+  display: flex;
+  position: relative;
+  gap: 1.2rem;
+  text-decoration: none;
+  gap: clamp(1rem, 5vw, 3rem);
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: dimgray;
+  font-size: 20px;
+}
+
+.icon-close {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  position: relative;
+  top: -33px;
+}
+
+.hide-btn {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Sidebar */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.navbar {
+  background-color: transparent;
+  /* This property specifies whether to clip content or to add scrollbars when an element's content is too big to fit in a specified area. */
+  overflow: hidden;
+  height: 50px;
+}
+
+.navbar a {
+  /* move the elements to the left or right */
+  float: right;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 30px;
+  text-decoration: none;
+}
+
+.navbar ul {
+  margin: 20px 0 0 0;
+  list-style: none;
+}
+
+.navbar a:hover {
+  background-color: transparent;
+  color: #000;
+}
+
+/* Side navigation */
+
+.side-nav {
+  height: 1300px;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: -95px;
+  right: 0;
+  background-color: white;
+  opacity: 0.9;
+  overflow-x: hidden;
+  /*
+This padding is for links that are inside of the side bar   */
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+#side-menu {
+  position: absolute;
+  right: -33px;
+  padding-top: 30px;
+}
+
+/* Changing the lisnk inside side bar */
+
+.side-nav a {
+  padding: 10px 10px 10px 45px;
+  text-decoration: none;
+  font-size: 18px;
+  color: grey;
+  display: block;
+  transition: 0.3s;
+}
+
+.side-nav a:hover {
+  color: black;
+}
+
+/* .hamburguer-icon{
+  transition: 0.6s;
+} */
+
+.links:hover {
+  font-size: 18px;
+}
+
+/* Changing the close btn */
+.side-nav .btn-close {
+  position: relative;
+  top: 10px;
+  left: 140px;
+  font-size: 45px;
+}
+
+#btnClose {
+  color: grey;
+}
+
+/* giving some transition to the title */
+#main {
+  /* transition: margin-left 0.5s; */
+  padding: 20px;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Hide the hamburguer button in bigger sizes */
+@media (min-width: 856px) {
+  .open-side {
+    display: none;
+  }
+  .hamburguer-icon {
+    display: none;
+  }
+}
+
+/* Main container */
+
+.wrapper {
+  display: grid;
+  gap: 6rem;
+  max-width: 1300px;
+  max-height: fit-content;
+  grid-auto-flow: column;
+  /* This determines the equal size for both columns and not static */
+  grid-auto-columns: 1fr 1fr;
+}
+
+.nav-wrapper {
+  justify-items: center;
+  align-items: center;
+}
+
+/* box left */
+.left {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: 2fr 100px 100px 1fr;
+}
+
+.left h1 {
+  font-size: 7rem;
+  line-height: 4.5rem;
+  align-self: end;
+  max-width: 500px;
+  margin-bottom: 2rem;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.left p {
+  display: flex;
+  font-size: 1.1rem;
+  align-self: end;
+  max-width: 460px;
+  margin-bottom: 2rem;
+  font-size: 18px;
+  align-self: center;
+}
+
+.left button {
+  display: block;
+  width: 40%;
+  align-self: center;
+  padding: 1rem 1rem;
+  border-radius: 8px;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* buttons */
+.btn-login {
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  color: dimgray;
+  cursor: pointer;
+}
+
+.btn-register {
+  padding: 1rem 2rem;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 1px solid dimgray;
+  background-color: transparent;
+  color: dimgray;
+  cursor: pointer;
+}
+
+.advertising {
+  display: flex;
+  gap: 2rem;
+  justify-self: start;
+  align-self: flex-end;
+  width: 100%;
+}
+
+@media (min-width: 856px) and (max-width: 998px) {
+  body {
+    background-color: aquamarine;
+  }
+
+  .left h1 {
+    font-size: 64px;
+    line-height: 3.4rem;
+  }
+  .left p {
+    font-size: 17px;
+    line-height: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  .left button {
+    display: block;
+    width: 40%;
+    align-self: center;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    align-self: flex-start;
+    margin-top: 1.3rem;
+  }
+  .container {
+    padding: 2rem;
+    padding-top: 1rem;
+  }
+  .wrapper {
+    gap: 2rem;
+  }
+  .left {
+    padding: 2rem;
+  }
+
+  .nav-list a {
+    text-decoration: none;
+    color: dimgray;
+    font-size: 19px;
+  }
+
+  .btn {
+    font-size: 15px;
+    padding: 0.7rem 1rem;
+  }
+
+  .advertising {
+    gap: 1rem;
+  }
+
+  .nav-list {
+    gap: 1rem;
+  }
+
+  .left {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 2fr 1fr;
+  }
+
+  .navbar-nav ul {
+    margin-top: 12px;
+  }
+
+  .navbar-nav {
+    display: flex;
+    align-self: center;
+    position: static;
+    gap: 1.7rem;
+    margin-top: 0;
+  }
+
+  .navbar-nav a {
+    padding: 0;
+    align-self: flex-start;
+    color: black;
+    cursor: pointer;
+  }
+
+  .btns {
+    display: block;
+  }
+
+  .toggle1 {
+    width: 187px;
+    height: 185px;
+    transform: translate(-100px, 25px);
+    transition: all 0.3s ease-in-out;
+    z-index: 100000;
+    position: absolute;
+    border-radius: 4px;
+    background-color: white;
+    justify-content: center;
+    align-items: start;
+    gap: 1rem;
+    display: none;
+    box-shadow: 5px 4px 10px 1px rgb(0, 0, 0, 0.2);
+  }
+
+  .toggle2 {
+    width: 130px;
+    height: 140px;
+    transform: translate(0px, 25px);
+    transition: all 0.3s ease-in-out;
+    z-index: 100000;
+    position: absolute;
+    border-radius: 4px;
+    background-color: white;
+    justify-content: center;
+    align-items: start;
+    gap: 1rem;
+    display: none;
+    box-shadow: 5px 4px 10px 1px rgb(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  .list ul {
+    margin-top: 0;
+  }
+  .features-li:hover .toggle1 {
+    display: block;
+  }
+
+  .companies-li:hover .toggle2 {
+    display: block;
+  }
+
+  .dropdown li:hover {
+    color: lightslategray;
+    font-size: 17px;
+  }
+
+  .icon {
+    display: inline;
+    margin-right: 13px;
+    padding-left: 1rem;
+  }
+
+  .list li {
+    padding: 0.4rem 1rem;
+  }
+  .btn:hover {
+    color: rgb(227, 37, 227);
+    border-color: rgb(227, 37, 227);
+  }
+}
+
+@media (max-width: 855px) {
+  body {
+    background-color: yellow;
+  }
+  .wrapper {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "content"
+      "advertising"
+      "image";
+  }
+
+  .wrapper > :nth-child(1) {
+    grid-area: image;
+  }
+
+  .wrapper > :nth-child(2) {
+    display: grid;
+    grid-area: content;
+  }
+
+  .wrapper > :nth-child(3) {
+    grid-area: advertising;
+    display: flex;
+    justify-self: center;
+  }
+
+  .left {
+    grid-template-rows: 1fr 1fr;
+    padding-bottom: 0;
+    margin-top: 2rem;
+  }
+
+  .left h1 {
+    font-size: 56px;
+  }
+
+  .left p {
+    font-size: 20px;
+    color: dimgray;
+    margin-bottom: 2rem;
+  }
+  .left button {
+    width: 50%;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    margin-top: 1.7rem;
+
+    display: block;
+  }
+
+  .btn-content button {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .image {
+    align-self: center;
+  }
+  .wrapper {
+    width: 100%;
+    gap: 0;
+  }
+
+  .right {
+    width: 50%;
+
+    justify-self: center;
+  }
+
+  .container {
+    padding: 0;
+  }
+  .display-hide {
+    display: none;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .icon {
+    visibility: hidden;
+  }
+
+  .change-display-inline {
+    display: inline-flex;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: sticky;
+    top: var(--size-large);
+    right: var(--size-400);
+    cursor: pointer;
+    top: size;
+    background-color: transparent;
+    border: 0;
+    padding: 0.5em;
+  }
+
+  /* .mobile-nav-toggle .icon-close {
+     this hiddenthe elements
+    display: none;
+  }
+  */
+  .nav-list {
+    display: none;
+  }
+  .nav-wrapper .icon-hamburguer {
+    display: flex;
+    justify-content: end;
+    align-content: end;
+    padding: 0;
+  }
+
+  .mobile-nav-toggle {
+    justify-self: end;
+    align-self: end;
+  }
+  .icon-hamburguer {
+    display: flex;
+    align-self: center;
+    justify-content: end;
+  }
+
+  .nav-wrapper {
+    display: grid;
+    grid-auto-flow: row;
+    padding: 2rem;
+    position: relative;
+    z-index: 10000;
+    padding-bottom: 0;
+    grid-template-areas:
+      "brand"
+      ""
+      ""
+      "icon-hamburguer";
+  }
+
+  .nav-wrapper > :nth-child(3) {
+    grid-area: icon-hamburguer;
+    display: inline;
+    justify-self: center;
+  }
+
+  .nav-wrapper > :nth-child(4) {
+    grid-area: brand;
+    justify-self: center;
+    grid-area: brand;
+  }
+
+  .advertising {
+    justify-self: center;
+    align-self: center;
+  }
+
+  .btn-content {
+    margin: auto;
+  }
+
+  .primary-navigation {
+    position: absolute;
+    padding: 2rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    inset: 2rem var(--size-400) auto;
+    opacity: 0.9;
+    z-index: 1000;
+  }
+
+  /* This will activated when the toggle box shows up */
+  /* .primary-header[data-overlay]::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.8));
+  } */
+
+  .nav-list {
+    display: grid;
+    gap: clamp(var(--size-100), 5vw, var(--size-700));
+    text-align: start;
+    font-weight: bold;
+    line-height: 1.7;
+    position: absolute;
+    right: 27px;
+    top: 37px;
+  }
+
+  .nav-list a {
+    text-decoration: none;
+    color: var(--clr-primary-100);
+    font-weight: 800;
+    font-size: 15px;
+  }
+
+  .nav-list a:hover,
+  .nav-list a:focus {
+    color: var(--clr-accent-400);
+  }
+
+  .primary-navigation[data-visible] {
+    display: block;
+    z-index: 100;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: sticky;
+    top: var(--size-large);
+    right: var(--size-400);
+    cursor: pointer;
+    top: size;
+    background-color: transparent;
+    border: 0;
+    padding: 0.5em;
+    z-index: 100000;
+  }
+
+  .box {
+    z-index: 1000000;
+    text-align: center;
+    text-decoration: none;
+    width: 125px;
+    position: absolute;
+    margin-top: 0.3rem;
+    padding: 0.7rem 0.5rem;
+    border-radius: 7px;
+  }
+
+  .box-1 {
+    z-index: 100000;
+    background-color: white;
+    left: 12px;
+    display: block;
+    z-index: 1000;
+    text-align: center;
+    text-decoration: none;
+    width: 75px;
+    justify-self: end;
+    position: relative;
+    margin-top: 0.3rem;
+    padding: 0.7rem 0.5rem;
+    border-radius: 7px;
+    box-shadow: 0 1.25em 1em -1em 0.7;
+  }
+
+  .box-2 {
+    z-index: 100000;
+    background-color: white;
+    left: 12px;
+    display: block;
+    z-index: 1000;
+    text-align: center;
+    text-decoration: none;
+    width: 75px;
+    justify-self: end;
+    position: relative;
+    margin-top: 0.3rem;
+    padding: 0.7rem 0.5rem;
+    border-radius: 7px;
+    box-shadow: 0 1.25em 1em -1em 0.7;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .navbar-nav {
+    display: none;
+  }
+}
+
+@media (min-width: 999px) {
+  body {
+    background-color: antiquewhite;
+  }
+  .left h1 {
+    font-size: 5.6rem;
+    line-height: 1;
+    max-width: 500px;
+  }
+
+  .left p {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .left {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 2fr 1fr;
+  }
+  .btn {
+    font-size: 15px;
+    padding: 0.7rem 1rem;
+  }
+
+  .img-icon {
+    display: grid;
+    gap: 0.5rem;
+    justify-self: center;
+    align-self: start;
+  }
+
+  .icon-hamburguer {
+    display: none;
+  }
+
+  .navbar-nav {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    position: static;
+    gap: 2rem;
+  }
+
+  .navbar-nav a {
+    padding: 0;
+    align-self: flex-start;
+    color: black;
+    cursor: pointer;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .toggle1 {
+    width: 187px;
+    height: 185px;
+    transform: translate(-100px, 25px);
+    transition: all 0.3s ease-in-out;
+    z-index: 100000;
+    position: absolute;
+    border-radius: 4px;
+    background-color: white;
+    justify-content: center;
+    align-items: start;
+    gap: 1rem;
+    display: none;
+    box-shadow: 5px 4px 10px 1px rgb(0, 0, 0, 0.2);
+  }
+
+  .toggle2 {
+    width: 130px;
+    height: 140px;
+    transform: translate(0px, 25px);
+    transition: all 0.3s ease-in-out;
+    z-index: 100000;
+    position: absolute;
+    border-radius: 4px;
+    background-color: white;
+    justify-content: center;
+    align-items: start;
+    gap: 1rem;
+    display: none;
+    box-shadow: 5px 4px 10px 1px rgb(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  .list ul {
+    margin-top: 0;
+  }
+  .features-li:hover .toggle1 {
+    display: block;
+  }
+
+  .companies-li:hover .toggle2 {
+    display: block;
+    transition: 0.4s;
+  }
+
+  .dropdown li:hover {
+    color: lightslategray;
+    font-size: 17px;
+    transition: 0.2s;
+  }
+
+  .icon {
+    display: inline;
+    margin-right: 13px;
+    padding-left: 1rem;
+  }
+
+  .list li {
+    padding: 0.4rem 1rem;
+  }
+  .btn:hover {
+    color: rgb(227, 37, 227);
+    border-color: rgb(227, 37, 227);
+  }
+}
